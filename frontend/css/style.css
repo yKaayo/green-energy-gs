@@ -2,13 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-path {
-  stroke-dasharray: 50;
-  stroke-dashoffset: 50;
+#logo-icon path {
+  stroke-dasharray: 155;
+  stroke-dashoffset: 155;
   animation: textAnim 3s ease-in-out forwards;
 }
 
 @keyframes textAnim {
+  0% {
+    /* fill: transparent; */
+    stroke-dashoffset: 155;
+  }
+  80% {
+    /* fill: transparent; */
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+#logo-name path {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: textAnimName 3s ease-in-out forwards;
+}
+
+@keyframes textAnimName {
   0% {
     fill: transparent;
     stroke-dashoffset: 50;

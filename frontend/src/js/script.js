@@ -1,5 +1,5 @@
 // API
-document.getElementById("firstAnswer").addEventListener("submit", (e) => {
+document.querySelector("#firstAnswer").addEventListener("submit", (e) => {
   e.preventDefault();
 
   const selectedRadio = document.querySelector('input[name="answer1"]:checked');
