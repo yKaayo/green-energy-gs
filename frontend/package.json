@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tailwindcss -i ./css/style.css -o ./src/css/style.css --watch"
+    "tailwind": "npx tailwindcss -i ./css/input.css -o ./css/output.scss --watch",
+    "sass": "sass --watch ./css/output.scss ./src/css/style.css"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +13,9 @@
   "devDependencies": {
     "daisyui": "^4.12.14",
     "tailwindcss": "^3.4.14"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "chart.js": "^4.4.6"
   }
 }

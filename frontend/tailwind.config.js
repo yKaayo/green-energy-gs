@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         'yellow': '#FFD700',
+        'yellow-100': '#fbe46280',
       },
       fontFamily: {
         sans: ["Varela Round", "sans-serif"],

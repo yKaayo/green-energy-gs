@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#logo-icon path {
+  stroke-dasharray: 155;
+  stroke-dashoffset: 155;
+  animation: textAnim 3s ease-in-out forwards;
+}
+
+@keyframes textAnim {
+  0% {
+    /* fill: transparent; */
+    stroke-dashoffset: 155;
+  }
+  80% {
+    /* fill: transparent; */
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+#logo-name path {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: textAnimName 3s ease-in-out forwards;
+}
+
+@keyframes textAnimName {
+  0% {
+    fill: transparent;
+    stroke-dashoffset: 50;
+  }
+  80% {
+    fill: transparent;
+  }
+  100% {
+    fill: #FFD700;
+    stroke-dashoffset: 0;
+  }
+}
+
+.radio-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-input * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.radio-input label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0px 20px;
+  cursor: pointer;
+  height: 40px;
+  position: relative;
+}
+
+.radio-input label::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 40px;
+  z-index: -1;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border-radius: 8px;
+  border: 2px solid transparent;
+}
+.radio-input label:hover::before {
+  transition: all 0.2s ease;
+  background-color: #fbe46280;
+}
+
+.radio-input .label:has(input:checked)::before {
+  background-color: #ffd700;
+  border-color: #ffd700;
+  height: 40px;
+  color: #000000;
+}
+.radio-input .label .text {
+  color: #fff;
+}
+
+.radio-input .label input[type="radio"] {
+  background-color: #202030;
+  appearance: none;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.radio-input .label input[type="radio"]:checked {
+  background-color: #000000;
+  -webkit-animation: puls 0.7s forwards;
+  animation: pulse 0.7s forwards;
+  color: #000000;
+}
+
+.radio-input .label input[type="radio"]:checked + p {
+  color: #000000;
+  font-weight: 500;
+}
+
+.radio-input .label input[type="radio"]:before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transition: all 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: #fff;
+  transform: scale(0);
+}
+
+.radio-input .label input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* header {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 85%,
+    rgba(0, 0, 0, 0.2) 90%,
+    rgba(0, 0, 0, 0.1) 95%,
+    rgba(0, 0, 0, 0) 100%
+  );
+} */
+
+.modal-question {
+  @apply p-5 rounded-lg backdrop-blur-lg bg-[#f7ffd5] border-2 border-yellow;
+}
+
+.btn-yellow {
+  @apply bg-yellow px-3 py-1 rounded-lg text-lg font-semibold border-2 border-yellow duration-500 hover:bg-transparent;
+}
+
+.btn-outline-yellow {
+  @apply bg-transparent px-3 py-1 rounded-lg text-lg font-semibold border-2 border-yellow duration-500 hover:bg-yellow;
+}
+
+@keyframes fadeInLeft {
+  0% { transform: translateX(-10%); opacity: 0%; }
+  100% { transform: translateX(0); opacity: 100%; }
+}
