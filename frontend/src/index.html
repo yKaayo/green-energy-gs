@@ -124,7 +124,7 @@
           </nav>
         </header>
 
-        <div class="h-[min(calc(100dvh_-_80px))] w-full">
+        <div class="h-[min(calc(100dvh_-_80px))]">
           <div
             class="min-h-[90%] md:h-[90%] py-5 px-5 mx-5 rounded-3xl relative overflow-hidden"
           >
@@ -145,7 +145,7 @@
               >
                 <!-- Left -->
                 <div
-                  class="w-full text-center md:text-start md:w-[45%] h-full flex flex-col items-center justify-center md:items-start md:ps-10 gap-4"
+                  class="w-full text-center md:text-start md:w-[45%] h-full flex flex-col items-center justify-center md:items-start md:ps-10 gap-4 mb-4 md:mb-0"
                 >
                   <div class="flex items-center gap-2">
                     <svg
@@ -192,13 +192,15 @@
                     </svg>
                   </div>
                   <h2
-                    class="text-balance text-xl text-white mt-2 lg:text-2xl animate__animated animate__fadeInLeft animate__slow"
+                    class="text-balance text-xl text-white mt-2 lg:text-2xl animate__animated animate__fadeInDown animate__slow"
                   >
                     Sem uma mudança urgente no consumo de
                     <strong>energia</strong>, o futuro do planeta e nossa
                     qualidade de vida estão em <strong>risco</strong>.
                   </h2>
-                  <p class="text-balance text-sm lg:text-base text-white animate__animated animate__fadeInLeft animate__slow">
+                  <p
+                    class="text-balance text-sm lg:text-base text-white animate__animated animate__fadeInDown animate__slow"
+                  >
                     Poluição, temperaturas cada vez mais altas e aumento do
                     nível do mar são apenas algumas das
                     <strong>consequências</strong> da dependência de
@@ -211,10 +213,10 @@
 
                 <!-- Right -->
                 <div
-                  class="w-[45%] h-full flex justify-center items-center md:pe-10"
+                  class="md:w-[45%] w-full h-full flex justify-center items-center md:pe-10"
                 >
-                  <div class="w-full">
-                    <canvas id="myChart" height="250" width="auto"></canvas>
+                  <div class="w-full h-full">
+                    <canvas id="myChart" class="h-64 w-full"></canvas>
                   </div>
                 </div>
               </div>

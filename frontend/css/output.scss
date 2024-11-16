@@ -649,6 +649,10 @@ video {
   height: 5rem;
 }
 
+.h-64 {
+  height: 16rem;
+}
+
 .h-\[min\(calc\(100dvh_-_80px\)\)\] {
   height: min(calc(100dvh - 80px));
 }
@@ -675,10 +679,6 @@ video {
 
 .w-4\/5 {
   width: 80%;
-}
-
-.w-\[45\%\] {
-  width: 45%;
 }
 
 .w-dvw {
@@ -1133,6 +1133,84 @@ video {
   }
 }
 
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0%;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+@media (width >= 320px) {
+  #inicio {
+    margin-bottom: 340px;
+  }
+}
+
+@media (width > 326px) {
+  #inicio {
+    margin-bottom: 310px;
+  }
+}
+
+@media (width >= 330px) {
+  #inicio {
+    margin-bottom: 290px;
+  }
+}
+
+@media (width >= 352px) {
+  #inicio {
+    margin-bottom: 270px;
+  }
+}
+
+@media (width >= 371px) {
+  #inicio {
+    margin-bottom: 240px;
+  }
+}
+
+@media (width >= 392px) {
+  #inicio {
+    margin-bottom: 220px;
+  }
+}
+
+@media (width > 442px) {
+  #inicio {
+    margin-bottom: 200px;
+  }
+}
+
+@media (width >= 464px) {
+  #inicio {
+    margin-bottom: 170px;
+  }
+}
+
+@media (width >= 504px) {
+  #inicio {
+    margin-bottom: 140px;
+  }
+}
+
+@media (width > 642px) {
+  #inicio {
+    margin-bottom: 100px;
+  }
+}
+
+@media (width >= 768px) {
+  #inicio {
+    margin-bottom: 0px;
+  }
+}
+
 .hover\:text-yellow-100:hover {
   color: #fbe46280;
 }
@@ -1143,6 +1221,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:mb-0 {
+    margin-bottom: 0px;
+  }
+
   .md\:h-\[90\%\] {
     height: 90%;
   }
@@ -1183,3 +1265,4 @@ video {
     line-height: 1.5rem;
   }
 }
+

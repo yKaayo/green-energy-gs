@@ -31,6 +31,7 @@ new Chart(ctx, {
   },
   options: {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       title: {
         display: true,
@@ -48,7 +49,8 @@ new Chart(ctx, {
           text: "Carbono (Kg/CO₂)",
         },
         ticks: {
-          color: "#fff"
+          color: "#fff",
+          backgroundColor: "#fff"
         }
       },
       x: {
@@ -57,7 +59,8 @@ new Chart(ctx, {
           text: "Horas",
         },
         ticks: {
-          color: "#fff"
+          color: "#fff",
+          backgroundColor: "#fff"
         }
       },
     },
