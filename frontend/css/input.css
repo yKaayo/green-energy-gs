@@ -151,7 +151,7 @@
 } */
 
 .modal-question {
-  @apply p-5 rounded-lg backdrop-blur-lg bg-[#f7ffd5] border-2 border-yellow;
+  @apply p-5 rounded-lg backdrop-blur-lg bg-[#f7ffd590] border-2 border-yellow;
 }
 
 .btn-yellow {
