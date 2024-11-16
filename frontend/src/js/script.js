@@ -36,9 +36,14 @@ new Chart(ctx, {
       title: {
         display: true,
         text: "Quantidade de carbono produzido",
+        color: "#fff"
       },
       legend: {
         position: "top",
+        labels: {
+          color: 'white'
+      }
+
       },
     },
     scales: {
@@ -47,21 +52,31 @@ new Chart(ctx, {
         title: {
           display: true,
           text: "Carbono (Kg/CO₂)",
+          color: "#fff"
         },
         ticks: {
           color: "#fff",
           backgroundColor: "#fff",
         },
+        grid: {
+          color: 'rgba(255, 255, 255, 0.1)',
+          borderColor: '#fff'
+      },
       },
       x: {
         title: {
           display: true,
           text: "Horas",
+          color: "#fff"
         },
         ticks: {
           color: "#fff",
           backgroundColor: "#fff",
         },
+        grid: {
+          color: 'rgba(255, 255, 255, 0.1)', // Cor das linhas do grid
+          borderColor: 'white' // Cor da borda do eixo
+      },
       },
     },
   },
@@ -139,7 +154,7 @@ document.querySelector("#firstAnswer").addEventListener("submit", (e) => {
 
 // Carousel
 let index = 0;
-const slides = document.querySelectorAll("#carousel > div");
+const slides = document.querySelectorAll("#carousel div");
 const totalSlides = slides.length;
 
 function updateCarousel() {
