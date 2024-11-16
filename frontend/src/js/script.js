@@ -50,8 +50,8 @@ new Chart(ctx, {
         },
         ticks: {
           color: "#fff",
-          backgroundColor: "#fff"
-        }
+          backgroundColor: "#fff",
+        },
       },
       x: {
         title: {
@@ -60,8 +60,8 @@ new Chart(ctx, {
         },
         ticks: {
           color: "#fff",
-          backgroundColor: "#fff"
-        }
+          backgroundColor: "#fff",
+        },
       },
     },
   },
@@ -158,3 +158,68 @@ function prevSlide() {
   index = (index - 1 + totalSlides) % totalSlides;
   updateCarousel();
 }
+
+// Toggle Icon
+document.querySelectorAll(".chevronToX").forEach(button => {
+  button.addEventListener("click", () => {
+    // Fecha todos os outros cards primeiro
+    document.querySelectorAll(".growCard").forEach(card => {
+      if (card !== button.closest(".growCard")) {
+        // Reseta o texto
+        const texto = card.querySelector(".benefit-text");
+        texto.classList.remove("max-h-96", "opacity-100", "mt-4");
+        texto.classList.add("max-h-0", "opacity-0");
+        
+        // Reseta o ícone
+        const outroIcon = card.querySelector("i");
+        outroIcon.classList.remove("rotate-180");
+        outroIcon.classList.remove("fa-xmark");
+        outroIcon.classList.add("fa-chevron-down");
+      }
+    });
+
+    // Trata o card atual
+    const icon = button.querySelector('i');
+    if (icon.classList.contains('fa-chevron-down')) {
+      icon.classList.remove('fa-chevron-down');
+      icon.classList.add('fa-xmark', 'rotate-180');
+    } else {
+      icon.classList.remove('fa-xmark', 'rotate-180');
+      icon.classList.add('fa-chevron-down');
+    }
+    
+    const textCard = button.closest('.flex-col').querySelector('.benefit-text');
+    if (textCard.classList.contains('max-h-0')) {
+      textCard.classList.remove('max-h-0', 'opacity-0');
+      textCard.classList.add('max-h-96', 'opacity-100', 'mt-4');
+    } else {
+      textCard.classList.remove('max-h-96', 'opacity-100', 'mt-4');
+      textCard.classList.add('max-h-0', 'opacity-0');
+    }
+  });
+});
+
+// Navbar
+const navItem = document.querySelectorAll("nav ul li a");
+
+navItem.forEach((item) => {
+  item.addEventListener("click", () => {
+    navItem.forEach((i) => i.classList.remove("active"));
+    item.classList.add("active");
+  });
+});
+
+// Open and Close Menu
+const menuButton = document.querySelector("#menu-button i");
+const navLinks = document.getElementById("nav-links");
+
+menuButton.addEventListener("click", () => {
+  navLinks.classList.toggle("hidden");
+  if (menuButton.classList.contains("bi-justify-right")) {
+    menuButton.classList.remove("bi-justify-right");
+    menuButton.classList.add("bi-x");
+  } else {
+    menuButton.classList.remove("bi-x");
+    menuButton.classList.add("bi-justify-right");
+  }
+});

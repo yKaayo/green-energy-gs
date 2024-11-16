@@ -161,14 +161,12 @@
 .btn-outline-yellow {
   @apply bg-transparent px-3 py-1 rounded-lg text-lg font-semibold border-2 border-yellow duration-500 hover:bg-yellow;
 }
-
-@keyframes fadeInLeft {
-  0% { transform: translateX(-10%); opacity: 0%; }
-  100% { transform: translateX(0); opacity: 100%; }
+.btn-outline-black {
+  @apply bg-transparent px-3 py-1 rounded-lg text-lg font-semibold border-2 border-black duration-500 hover:bg-yellow;
 }
 
 @keyframes fadeInDown {
-  0% { transform: translateY(-10%); opacity: 0%; }
+  0% { transform: translateY(-15%); opacity: 0%; }
   100% { transform: translateY(0); opacity: 100%; }
 }
 
@@ -229,3 +227,10 @@
   }
 }
 
+.active {
+  color: #FFD700;
+}
+
+html {
+  scroll-behavior: smooth;
+}
