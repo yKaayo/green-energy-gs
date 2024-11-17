@@ -10,13 +10,8 @@
 
 @keyframes textAnim {
   0% {
-    /* fill: transparent; */
     stroke-dashoffset: 155;
-  }
-  80% {
-    /* fill: transparent; */
-  }
-  100% {
+  } 100% {
     stroke-dashoffset: 0;
   }
 }
@@ -36,7 +31,7 @@
     fill: transparent;
   }
   100% {
-    fill: #FFD700;
+    fill: #ffd700;
     stroke-dashoffset: 0;
   }
 }
@@ -165,13 +160,27 @@
   @apply bg-transparent px-3 py-1 rounded-lg text-lg font-semibold border-2 border-black duration-500 hover:bg-yellow;
 }
 
-@keyframes fadeInDown {
-  0% { transform: translateY(-15%); opacity: 0%; }
-  100% { transform: translateY(0); opacity: 100%; }
+.nav-link {
+  @apply text-white text-lg relative
+  after:absolute after:-bottom-1 after:left-0 
+  after:w-0 after:h-0.5 after:bg-white 
+  after:transition-[width] after:duration-300 after:ease-in-out
+  hover:after:w-full py-2 md:py-0;
 }
 
-.active {
-  color: #FFD700;
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-15%);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+}
+
+.active::after {
+  width: 100%;
 }
 
 html {

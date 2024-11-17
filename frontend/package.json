@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "tailwind": "npx tailwindcss -i ./css/input.css -o ./css/output.scss --watch",
-    "sass": "sass --watch ./css/output.scss ./src/css/style.css"
+    "tailwind": "npx tailwindcss -i ./css/style.css -o ./src/css/style.css --watch"
   },
   "keywords": [],
   "author": "",

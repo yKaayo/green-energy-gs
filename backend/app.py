@@ -15,31 +15,29 @@ def calcular():
         print(f"Pergunta: {formQuestions}")
         print(f"Resposta: {formAnswers}")
         
-        emission = [0.05, 0.12, 0.10, 0.15, 0.03]
-        
         total_emission = 0
         for i, resposta in enumerate(formAnswers):
             if resposta == "2":
-                total_emission += emission[i]
+                total_emission += [0.1, 0.5, 7, 1.5, 0.2, 2][i]
             elif resposta == "1":
-                total_emission += emission[i]
+                total_emission += [0.5, 3.5, 1, 1, 0.6, 1][i]
             elif resposta == "0":
-                total_emission += emission[i]
+                total_emission += [1, 5, 0.5, 0.5, 1, 0.5][i]
     
-        media_emissoes = round(total_emission / len(formAnswers), 2)
+        mean_emission = total_emission / 5
         
-        print(media_emissoes)
+        print(mean_emission)
     
-        if media_emissoes >= 0.75:
-            classificacao = "Gastador"
-        elif media_emissoes >= 0.5 and media_emissoes <= 0.74:
-            classificacao = "Mediano"
+        if mean_emission >= 2:
+            rating = "Gastador"
+        elif mean_emission >= 1.4 and mean_emission < 2:
+            rating = "Mediano"
         else:
-            classificacao = "Economista"
+            rating = "Economista"
     
-        print(classificacao)
+        print(rating)
         
-        return jsonify({'media_emissoes': media_emissoes, 'classificacao': classificacao})
+        return jsonify({'media_emissoes': mean_emission, 'rating': rating})
         
     except Exception as e:
         print("Erro:", str(e))
@@ -47,3 +45,4 @@ def calcular():
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
+    

@@ -36,14 +36,13 @@ new Chart(ctx, {
       title: {
         display: true,
         text: "Quantidade de carbono produzido",
-        color: "#fff"
+        color: "#fff",
       },
       legend: {
         position: "top",
         labels: {
-          color: 'white'
-      }
-
+          color: "white",
+        },
       },
     },
     scales: {
@@ -52,31 +51,31 @@ new Chart(ctx, {
         title: {
           display: true,
           text: "Carbono (Kg/CO₂)",
-          color: "#fff"
+          color: "#fff",
         },
         ticks: {
           color: "#fff",
           backgroundColor: "#fff",
         },
         grid: {
-          color: 'rgba(255, 255, 255, 0.1)',
-          borderColor: '#fff'
-      },
+          color: "rgba(255, 255, 255, 0.1)",
+          borderColor: "#fff",
+        },
       },
       x: {
         title: {
           display: true,
           text: "Horas",
-          color: "#fff"
+          color: "#fff",
         },
         ticks: {
           color: "#fff",
           backgroundColor: "#fff",
         },
         grid: {
-          color: 'rgba(255, 255, 255, 0.1)', // Cor das linhas do grid
-          borderColor: 'white' // Cor da borda do eixo
-      },
+          color: "rgba(255, 255, 255, 0.1)", // Cor das linhas do grid
+          borderColor: "white", // Cor da borda do eixo
+        },
       },
     },
   },
@@ -91,6 +90,7 @@ const titles = [
   "Você costuma comer carne todos os dias?",
   "Você utiliza sempre o gás de cozinha para preparar suas refeições?",
   "Você normalmente recicla seu lixo?",
+  "Você consome muitos produtos embalados ou descartáveis?",
 ];
 
 const values = [];
@@ -129,7 +129,7 @@ document.querySelector("#firstAnswer").addEventListener("submit", (e) => {
   });
   console.log(values);
 
-  if (values.length === 5) {
+  if (values.length === 6) {
     fetch("http://localhost:5000/calcular", {
       method: "POST",
       headers: {
@@ -144,7 +144,7 @@ document.querySelector("#firstAnswer").addEventListener("submit", (e) => {
         return res.json();
       })
       .then((data) => {
-        console.log(`Deu certo: ${data}`);
+        console.log("Dados recebidos:", data);
       })
       .catch((error) => {
         console.error(`Erro: ${error}`);
@@ -175,16 +175,16 @@ function prevSlide() {
 }
 
 // Toggle Icon
-document.querySelectorAll(".chevronToX").forEach(button => {
+document.querySelectorAll(".chevronToX").forEach((button) => {
   button.addEventListener("click", () => {
     // Fecha todos os outros cards primeiro
-    document.querySelectorAll(".growCard").forEach(card => {
+    document.querySelectorAll(".growCard").forEach((card) => {
       if (card !== button.closest(".growCard")) {
         // Reseta o texto
         const texto = card.querySelector(".benefit-text");
         texto.classList.remove("max-h-96", "opacity-100", "mt-4");
         texto.classList.add("max-h-0", "opacity-0");
-        
+
         // Reseta o ícone
         const outroIcon = card.querySelector("i");
         outroIcon.classList.remove("rotate-180");
@@ -194,22 +194,22 @@ document.querySelectorAll(".chevronToX").forEach(button => {
     });
 
     // Trata o card atual
-    const icon = button.querySelector('i');
-    if (icon.classList.contains('fa-chevron-down')) {
-      icon.classList.remove('fa-chevron-down');
-      icon.classList.add('fa-xmark', 'rotate-180');
+    const icon = button.querySelector("i");
+    if (icon.classList.contains("fa-chevron-down")) {
+      icon.classList.remove("fa-chevron-down");
+      icon.classList.add("fa-xmark", "rotate-180");
     } else {
-      icon.classList.remove('fa-xmark', 'rotate-180');
-      icon.classList.add('fa-chevron-down');
+      icon.classList.remove("fa-xmark", "rotate-180");
+      icon.classList.add("fa-chevron-down");
     }
-    
-    const textCard = button.closest('.flex-col').querySelector('.benefit-text');
-    if (textCard.classList.contains('max-h-0')) {
-      textCard.classList.remove('max-h-0', 'opacity-0');
-      textCard.classList.add('max-h-96', 'opacity-100', 'mt-4');
+
+    const textCard = button.closest(".flex-col").querySelector(".benefit-text");
+    if (textCard.classList.contains("max-h-0")) {
+      textCard.classList.remove("max-h-0", "opacity-0");
+      textCard.classList.add("max-h-96", "opacity-100", "mt-4");
     } else {
-      textCard.classList.remove('max-h-96', 'opacity-100', 'mt-4');
-      textCard.classList.add('max-h-0', 'opacity-0');
+      textCard.classList.remove("max-h-96", "opacity-100", "mt-4");
+      textCard.classList.add("max-h-0", "opacity-0");
     }
   });
 });

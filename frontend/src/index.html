@@ -6,7 +6,7 @@
     <title>Green Energy</title>
     <link
       rel="shortcut icon"
-      href="./assets/icons/logo.svg"
+      href="./assets/icons/logo-yellow.svg"
       type="image/x-icon"
     />
 
@@ -44,12 +44,12 @@
       <!-- Hero -->
       <div id="inicio" class="pt-[60px]">
         <header
-          class="flex justify-between items-center h-[60px] w-dvw fixed px-20 z-10 top-0 bg-white"
+          class="flex justify-between items-center h-[60px] w-dvw fixed px-20 z-10 top-0 bg-yellow"
         >
           <div class="flex items-center gap-2">
             <img
               class="h-[44px]"
-              src="./assets/icons/logo.svg"
+              src="./assets/icons/logo-white.svg"
               loading="lazy"
               alt="Logo da Future Energy"
             />
@@ -69,7 +69,7 @@
                 <li>
                   <a
                     href="#inicio"
-                    class="block text-black text-lg tracking-wider md:hover:text-yellow-100 duration-300 active:text-yellow py-2 md:py-0"
+                    class="nav-link"
                   >
                     Início
                   </a>
@@ -77,7 +77,7 @@
                 <li>
                   <a
                     href="#energy"
-                    class="block text-black text-lg tracking-wider md:hover:text-yellow-100 duration-300 active:text-yellow py-2 md:py-0"
+                    class="nav-link"
                   >
                     Energias Renováveis
                   </a>
@@ -85,7 +85,7 @@
                 <li>
                   <a
                     href="#"
-                    class="block text-black text-lg tracking-wider md:hover:text-yellow-100 duration-300 active:text-yellow py-2 md:py-0"
+                    class="nav-link"
                   >
                     Lorem
                   </a>
@@ -93,7 +93,7 @@
                 <li>
                   <a
                     href="#"
-                    class="block text-black text-lg tracking-wider md:hover:text-yellow-100 duration-300 active:text-yellow py-2 md:py-0"
+                    class="nav-link"
                   >
                     Lorem
                   </a>
@@ -101,7 +101,7 @@
                 <li>
                   <a
                     href="#"
-                    class="block text-black text-lg tracking-wider md:hover:text-yellow-100 duration-300 active:text-yellow py-2 md:py-0"
+                    class="nav-link"
                   >
                     Lorem
                   </a>
@@ -111,9 +111,9 @@
           </nav>
         </header>
 
-        <div class="h-[min(calc(100svh_-_60px))]">
+        <div class="h-[min(calc(100svh_-_60px))] mt-5">
           <div
-            class="min-h-[90%] md:h-[90%] py-5 px-5 mx-5 rounded-3xl relative overflow-hidden"
+            class="min-h-[90%] md:h-[90%] py-5 px-5 mx-5 rounded-3xl flex items-center relative overflow-hidden"
           >
             <div class="absolute inset-0">
               <video
@@ -128,7 +128,7 @@
             <div class="absolute inset-0 bg-black/40"></div>
             <div class="relative z-[1] h-full flex items-center">
               <div
-                class="flex flex-col md:flex-row items-center justify-between"
+                class="flex flex-col md:flex-row items-center gap-5 md:gap-0 justify-between"
               >
                 <!-- Left -->
                 <div
@@ -214,11 +214,11 @@
       <!-- Hero - End -->
 
       <section
-        class="relative min-h-[calc(100dvh_-_60px)] w-full overflow-hidden rounded-lg py-5"
+        class="top-16 sm:top-0 flex items-center relative min-h-[calc(100svh_-_60px)] w-full overflow-hidden rounded-lg py-5"
       >
         <!-- Carrossel Container -->
         <div
-          class="flex transition-transform min-h-[calc(95dvh_-_60px)] duration-500 h-full"
+          class="flex transition-transform min-h-full duration-500"
           id="carousel"
         >
           <!-- Slide 1 -->
@@ -229,7 +229,9 @@
             <div
               class="left md:w-[40%] flex flex-col justify-center h-full text-center md:text-start"
             >
-              <h2 class="text-3xl text-balance mb-3 font-semibold">Energia Solar</h2>
+              <h2 class="text-3xl text-balance mb-3 font-semibold">
+                Energia Solar
+              </h2>
               <p class="text-balance">
                 A energia solar é uma fonte de energia limpa, renovável e
                 abundante, gerada a partir da luz do sol. Por meio de painéis
@@ -272,7 +274,9 @@
                       <i class="fa-solid fa-chevron-down"></i>
                     </button>
                   </div>
-                  <p class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 benefit-text">
+                  <p
+                    class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 benefit-text"
+                  >
                     Ajuda a reduzir o aquecimento global, assim diminuindo o
                     calor. Além disso, cria empregos em áreas como instalação,
                     manutenção e fabricação de painéis solares. Outra vantagem é
@@ -292,7 +296,9 @@
                       <i class="fa-solid fa-chevron-down"></i>
                     </button>
                   </div>
-                  <p class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 benefit-text">
+                  <p
+                    class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 benefit-text"
+                  >
                     A transição para fontes de energia limpa enfrenta alguns
                     desafios. Um dos principais motivos é o alto preço para ter
                     energia limpa. Além disso, há a falta de infraestrutura para
@@ -321,13 +327,13 @@
         </button>
       </section>
 
-      <section class="min-h-dvh">
+      <section class="min-h-dvh relative top-28">
         <button class="btn btn-yellow" onclick="modal.showModal()">
           Ver meu Perfil
         </button>
         <dialog
           id="modal"
-          class="modal modal-bottom sm:modal-middle modal-question"
+          class="modal modal-bottom sm:modal-middle modal-question w-3/4"
         >
           <div class="modal-box">
             <button id="modalBack" class="btn mb-2" onclick="">
@@ -359,7 +365,7 @@
                   </label>
                   <label class="label border-2 border-yellow rounded-lg">
                     <input type="radio" name="answer" value="0" />
-                    <p class="text-black">Não, acabo esquecendo</p>
+                    <p class="text-black">Não</p>
                   </label>
                 </div>
               </div>
