@@ -134,17 +134,6 @@
   }
 }
 
-/* header {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.45) 85%,
-    rgba(0, 0, 0, 0.2) 90%,
-    rgba(0, 0, 0, 0.1) 95%,
-    rgba(0, 0, 0, 0) 100%
-  );
-} */
-
 .modal-question {
   @apply p-5 rounded-lg backdrop-blur-lg bg-[#f7ffd590] border-2 border-yellow;
 }
@@ -162,10 +151,10 @@
 
 .nav-link {
   @apply text-white text-lg relative
-  after:absolute after:-bottom-1 after:left-0 
+  after:absolute after:bottom-0 md:after:-bottom-1 after:left-0 
   after:w-0 after:h-0.5 after:bg-white 
   after:transition-[width] after:duration-300 after:ease-in-out
-  hover:after:w-full py-2 md:py-0;
+  hover:after:w-3/5 py-1 md:py-0;
 }
 
 @keyframes fadeInDown {
@@ -180,7 +169,7 @@
 }
 
 .active::after {
-  width: 100%;
+  width: 60%;
 }
 
 html {

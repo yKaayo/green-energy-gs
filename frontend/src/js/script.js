@@ -130,7 +130,7 @@ document.querySelector("#firstAnswer").addEventListener("submit", (e) => {
   console.log(values);
 
   if (values.length === 6) {
-    fetch("http://localhost:5000/calcular", {
+    fetch("https://kaayo.pythonanywhere.com/calcular", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -149,6 +149,12 @@ document.querySelector("#firstAnswer").addEventListener("submit", (e) => {
       .catch((error) => {
         console.error(`Erro: ${error}`);
       });
+
+    // Reset the form
+    document.querySelector("#modalTitle").textContent = titles[0];
+    while (values.length) {
+      values.pop();
+    }
   }
 });
 
@@ -159,8 +165,8 @@ const totalSlides = slides.length;
 
 function updateCarousel() {
   const offset = -index * 100;
-  document.getElementById(
-    "carousel"
+  document.querySelector(
+    "#carousel"
   ).style.transform = `translateX(${offset}%)`;
 }
 
@@ -193,7 +199,6 @@ document.querySelectorAll(".chevronToX").forEach((button) => {
       }
     });
 
-    // Trata o card atual
     const icon = button.querySelector("i");
     if (icon.classList.contains("fa-chevron-down")) {
       icon.classList.remove("fa-chevron-down");

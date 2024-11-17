@@ -850,11 +850,6 @@ video {
   background-color: rgb(0 0 0 / 0.4);
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 .bg-yellow {
   --tw-bg-opacity: 1;
   background-color: rgb(255 215 0 / var(--tw-bg-opacity));
@@ -965,11 +960,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-yellow {
-  --tw-text-opacity: 1;
-  color: rgb(255 215 0 / var(--tw-text-opacity));
 }
 
 .opacity-0 {
@@ -1148,17 +1138,6 @@ video {
   }
 }
 
-/* header {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.45) 85%,
-    rgba(0, 0, 0, 0.2) 90%,
-    rgba(0, 0, 0, 0.1) 95%,
-    rgba(0, 0, 0, 0) 100%
-  );
-} */
-
 .modal-question {
   border-radius: 0.5rem;
   border-width: 2px;
@@ -1236,8 +1215,8 @@ video {
 
 .nav-link {
   position: relative;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
   --tw-text-opacity: 1;
@@ -1246,7 +1225,7 @@ video {
 
 .nav-link::after {
   position: absolute;
-  bottom: -0.25rem;
+  bottom: 0px;
   left: 0px;
   height: 0.125rem;
   width: 0px;
@@ -1260,13 +1239,18 @@ video {
 
 .nav-link:hover::after {
   content: var(--tw-content);
-  width: 100%;
+  width: 60%;
 }
 
 @media (min-width: 768px) {
   .nav-link {
     padding-top: 0px;
     padding-bottom: 0px;
+  }
+
+  .nav-link::after {
+    content: var(--tw-content);
+    bottom: -0.25rem;
   }
 }
 
@@ -1283,7 +1267,7 @@ video {
 }
 
 .active::after {
-  width: 100%;
+  width: 60%;
 }
 
 html {
