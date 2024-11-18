@@ -148,6 +148,9 @@
 .btn-outline-black {
   @apply bg-transparent px-3 py-1 rounded-lg text-lg font-semibold border-2 border-black duration-500 hover:bg-yellow;
 }
+.btn-outline-white {
+  @apply bg-transparent px-3 py-1 rounded-lg text-lg font-semibold border-2 border-white duration-500 hover:bg-white hover:text-yellow;
+}
 
 .nav-link {
   @apply text-white text-lg relative

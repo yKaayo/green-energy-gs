@@ -155,11 +155,11 @@ document.querySelector("#formAnswer").addEventListener("submit", (e) => {
           data.media_emissoes
         ).toFixed(2)} kg de carbono por dia`;
 
-        if (data.rating === "Gastador") {
+        if (data.rating === "Desperdiçador") {
           document.querySelector("#resultContent").innerHTML = `<p></p>`;
-        } else if (data.rating === "Mediano") {
+        } else if (data.rating === "Equilibrado") {
           document.querySelector("#resultContent").innerHTML = `<p></p>`;
-        } else if (data.rating === "Economista") {
+        } else if (data.rating === "Sustentável") {
           document.querySelector("#resultContent").innerHTML = `<p></p>`;
         }
       })
@@ -257,3 +257,8 @@ menuButton.addEventListener("click", () => {
     menuButton.classList.add("bi-justify-right");
   }
 });
+
+// Contact Form
+document.querySelector('#contactForm').addEventListener('submit', (e) => {
+  e.preventDefault()
+})
