@@ -150,11 +150,8 @@ document.querySelector("#firstAnswer").addEventListener("submit", (e) => {
         console.error(`Erro: ${error}`);
       });
 
-    // Reset the form
-    document.querySelector("#modalTitle").textContent = titles[0];
-    while (values.length) {
-      values.pop();
-    }
+    // Take out the button when the form is submit
+    document.querySelector("#btnOpenForm").classList.add("hidden");
   }
 });
 
