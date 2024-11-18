@@ -107,7 +107,7 @@ btnBack.addEventListener("click", () => {
   console.log(values);
 });
 
-document.querySelector("#firstAnswer").addEventListener("submit", (e) => {
+document.querySelector("#formAnswer").addEventListener("submit", (e) => {
   e.preventDefault();
 
   const selectedRadio = document.querySelector('input[name="answer"]:checked');
