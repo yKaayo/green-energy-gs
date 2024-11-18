@@ -614,10 +614,6 @@ video {
   top: 4rem;
 }
 
-.top-28 {
-  top: 7rem;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -900,11 +896,6 @@ video {
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-}
-
-.px-20 {
-  padding-left: 5rem;
-  padding-right: 5rem;
 }
 
 .px-5 {
