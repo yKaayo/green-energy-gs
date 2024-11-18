@@ -96,7 +96,6 @@ const titles = [
 const values = [];
 
 const btnBack = document.querySelector("#modalBack");
-
 btnBack.addEventListener("click", () => {
   if (i > 0) {
     i -= 1;
@@ -145,6 +144,24 @@ document.querySelector("#firstAnswer").addEventListener("submit", (e) => {
       })
       .then((data) => {
         console.log("Dados recebidos:", data);
+
+        // media_emissoes
+        // rating
+        document.querySelector("#resultTitle").textContent = `Seu perfil é `;
+        document.querySelector(
+          "#resultTitle"
+        ).innerHTML += `<span class="text-yellow">${data.rating}</span>`;
+        document.querySelector(
+          "#resultSubtitle"
+        ).textContent = `Com base nas suas respostas, você gera aproximadamente ${Number(data.media_emissoes).toFixed(2)} kg de carbono por dia`;
+
+        if (data.rating === 'Gastador') {
+          document.querySelector('#resultContent').innerHTML = `<p></p>`
+        } else if(data.rating === 'Mediano') {
+          document.querySelector('#resultContent').innerHTML = `<p></p>`
+        } else if(data.rating === 'Economista') {
+          document.querySelector('#resultContent').innerHTML = `<p></p>`
+        }
       })
       .catch((error) => {
         console.error(`Erro: ${error}`);

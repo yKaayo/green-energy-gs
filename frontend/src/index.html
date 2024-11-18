@@ -303,55 +303,81 @@
         </button>
       </section>
 
-      <section class="min-h-dvh relative top-28">
-        <button id="btnOpenForm" class="btn btn-yellow" onclick="modal.showModal()">
-          Ver meu Perfil
-        </button>
-        <dialog
-          id="modal"
-          class="modal modal-bottom sm:modal-middle modal-question w-3/4"
+      <section class="min-h-[calc(100svh_-_60px)] flex items-center justify-center">
+        <div id="resultContent"
+          class="h-full flex flex-col items-center justify-center text-center gap-4"
         >
-          <div class="modal-box">
-            <button id="modalBack" class="btn mb-2" onclick="">
-              <i class="fa-solid fa-arrow-left p-2 bg-yellow rounded-full"></i>
-            </button>
-            <form id="firstAnswer" class="">
-              <div class="flex flex-col items-center">
-                <p
-                  id="modalTitle"
-                  class="text-balance text-xl w-4/5 font-semibold text-center mb-4"
-                >
-                  Você desliga aparelhos e luzes quando não está usando?
-                </p>
-
-                <div class="radio-input w-full mx-10">
-                  <label class="label border-2 border-yellow rounded-lg">
-                    <input
-                      class=""
-                      type="radio"
-                      name="answer"
-                      value="2"
-                      required
-                    />
-                    <p class="text-black">Sim</p>
-                  </label>
-                  <label class="label border-2 border-yellow rounded-lg">
-                    <input type="radio" name="answer" value="1" />
-                    <p class="text-black">Algumas vezes</p>
-                  </label>
-                  <label class="label border-2 border-yellow rounded-lg">
-                    <input type="radio" name="answer" value="0" />
-                    <p class="text-black">Não</p>
-                  </label>
-                </div>
+          <h3 id="resultTitle" class="text-2xl font-semibold text-balance mx-5">
+            Participe do nosso teste de pegada de carbono e conheça o seu perfil
+            ambiental
+          </h3>
+          <p id="resultSubtitle" class="mb-6 text-balance w-4/5">
+            Em poucos minutos, você entenderá como suas escolhas do dia a dia
+            influenciam o meio ambiente e descobrirá dicas práticas para reduzir
+            sua emissão de carbono. Faça a diferença hoje!
+          </p>
+          <button
+            id="btnOpenForm"
+            class="btn btn-yellow"
+            onclick="modal.showModal()"
+          >
+            Ver meu Perfil
+          </button>
+          <dialog
+            id="modal"
+            class="modal modal-bottom sm:modal-middle modal-question w-full sm:w-3/4"
+          >
+            <div class="modal-box">
+              <div class="flex justify-start">
+                <button id="modalBack" class="btn mb-2" onclick="">
+                  <i
+                    class="fa-solid fa-arrow-left p-2 bg-yellow rounded-full"
+                  ></i>
+                </button>
               </div>
+              <form id="firstAnswer" class="">
+                <div class="flex flex-col items-center">
+                  <p
+                    id="modalTitle"
+                    class="text-balance text-xl w-4/5 font-semibold text-center mb-4"
+                  >
+                    Você desliga aparelhos e luzes quando não está usando?
+                  </p>
 
-              <button id="modalBtn" class="btn btn-yellow mt-4">Próximo</button>
-            </form>
-          </div>
-        </dialog>
+                  <div class="radio-input w-full mx-10">
+                    <label class="label border-2 border-yellow rounded-lg">
+                      <input
+                        class=""
+                        type="radio"
+                        name="answer"
+                        value="2"
+                        required
+                      />
+                      <p class="text-black">Sim</p>
+                    </label>
+                    <label class="label border-2 border-yellow rounded-lg">
+                      <input type="radio" name="answer" value="1" />
+                      <p class="text-black">Algumas vezes</p>
+                    </label>
+                    <label class="label border-2 border-yellow rounded-lg">
+                      <input type="radio" name="answer" value="0" />
+                      <p class="text-black">Não</p>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="flex justify-end">
+                  <button id="modalBtn" class="btn btn-yellow mt-4">
+                    Próximo
+                  </button>
+                </div>
+              </form>
+            </div>
+          </dialog>
+        </div>
       </section>
     </main>
+    <footer class="bg-yellow w-full h-10 relative bottom-0"></footer>
   </body>
 
   <!-- Chart JS -->
