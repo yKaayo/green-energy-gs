@@ -267,15 +267,30 @@ document.querySelector("#contactForm").addEventListener("submit", (e) => {
 document.querySelector("#weatherApiBtn").addEventListener("click", () => {
   const city = document.querySelector("#city").value;
   console.log(city);
-  
 
   async function handleResponse(res) {
     if (res.ok) {
       const json = await res.json();
 
-      return new Weather(json.clouds.all, json.weather[0].main)
+      // If doesn't exist accumulated rain
+      let amountRainData = 0;
+
+      if (json.rain && json.rain["1h"]) {
+        amountRainData = json.rain["1h"];
+      }
+
+      return new Weather(
+        json.clouds.all,
+        json.weather[0].main,
+        json.wind.speed,
+        json.wind.deg,
+        json.wind.gust,
+        amountRainData
+      );
     } else {
-      throw new Error("Erro ao buscar dados da API. Verifique a cidade digitada.");
+      throw new Error(
+        "Erro ao buscar dados da API. Verifique a cidade digitada."
+      );
     }
   }
 
@@ -283,19 +298,60 @@ document.querySelector("#weatherApiBtn").addEventListener("click", () => {
     console.log("Dados do Clima:", data);
 
     if (Number(data.cloud) <= 40) {
-      document.querySelector('#textCloud').textContent = `${data.cloud}% - Ideal para a placa solar`
+      document.querySelector(
+        "#textCloud"
+      ).textContent = `${data.cloud}% - Ideal para a placa solar`;
     } else if (Number(data.cloud) > 40 && Number(data.cloud) <= 70) {
-      document.querySelector('#textCloud').textContent = `${data.cloud}% - Razoável para a placa solar`
+      document.querySelector(
+        "#textCloud"
+      ).textContent = `${data.cloud}% - Razoável para a placa solar`;
     } else {
-      document.querySelector('#textCloud').textContent = `${data.cloud}% - Ruim para a placa solar`
+      document.querySelector(
+        "#textCloud"
+      ).textContent = `${data.cloud}% - Ruim para a placa solar`;
     }
 
-    if (data.climate === 'Clear') {
-      document.querySelector('#textWeather').textContent = `Céu limpo`
+    if (data.climate === "Clear") {
+      document.querySelector("#textWeather").textContent = `Céu limpo`;
     } else {
-      document.querySelector('#textWeather').textContent = `Céu não está limpo`
-
+      document.querySelector(
+        "#textWeather"
+      ).textContent = `Céu não está totalmente limpo`;
     }
+
+    if (Number(data.windSpeed) >= 7) {
+      document.querySelector(
+        "#textWindSpeed"
+      ).textContent = `${data.windSpeed}m/s - Ideal para a turbina eólica`;
+    } else {
+      document.querySelector(
+        "#textWindSpeed"
+      ).textContent = `${data.windSpeed}m/s - Menos do que necessário para a turbina eólica`;
+    }
+
+    document.querySelector(
+      "#textWindMaxSpeed"
+    ).textContent = `${data.maxWindSpeed}m/s`;
+
+    if (data.windDeg == undefined) {
+      document.querySelector(
+        "#textWindDirection"
+      ).textContent = `Dado não encontrado`;
+    } else {
+      document.querySelector(
+        "#textWindDirection"
+      ).textContent = `${data.windDeg}°`;
+    }
+
+    if (data.climate == "Rain") {
+      document.querySelector("#textRain").textContent =
+        "Está chuvendo, isso é bom para a hidrelétrica";
+    } else {
+      document.querySelector("#textRain").textContent =
+        "Sem chuva, talvez a hidrelétrica seja afetada";
+    }
+
+    document.querySelector('#textAmountRain').textContent = `${data.amountRain}mm`
   }
 
   function handleError(error) {
@@ -309,18 +365,19 @@ document.querySelector("#weatherApiBtn").addEventListener("click", () => {
     const apiKey = "e751f9a145c71d84d72fe26d64f76e35";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pt_br&appid=${apiKey}`;
 
-    fetch(url)
-      .then(handleResponse)
-      .then(handleData)
-      .catch(handleError);
+    fetch(url).then(handleResponse).then(handleData).catch(handleError);
   }
 
   run();
 });
 
 class Weather {
-  constructor (cloud, climate){
-    this.cloud = cloud,
-    this.climate = climate
+  constructor(cloud, climate, windSpeed, maxWindSpeed, windDeg, amountRain) {
+    (this.cloud = cloud),
+      (this.climate = climate),
+      (this.windSpeed = windSpeed),
+      (this.maxWindSpeed = maxWindSpeed),
+      (this.windDeg = windDeg);
+    this.amountRain = amountRain;
   }
 }
