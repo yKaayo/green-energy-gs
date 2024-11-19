@@ -174,7 +174,7 @@ document.querySelector("#formAnswer").addEventListener("submit", (e) => {
 
 // Carousel
 let index = 0;
-const slides = document.querySelectorAll("#carousel div");
+const slides = document.querySelectorAll("#carousel > div");
 const totalSlides = slides.length;
 
 function updateCarousel() {
@@ -259,6 +259,68 @@ menuButton.addEventListener("click", () => {
 });
 
 // Contact Form
-document.querySelector('#contactForm').addEventListener('submit', (e) => {
-  e.preventDefault()
-})
+document.querySelector("#contactForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+});
+
+// Open Weather
+document.querySelector("#weatherApiBtn").addEventListener("click", () => {
+  const city = document.querySelector("#city").value;
+  console.log(city);
+  
+
+  async function handleResponse(res) {
+    if (res.ok) {
+      const json = await res.json();
+
+      return new Weather(json.clouds.all, json.weather[0].main)
+    } else {
+      throw new Error("Erro ao buscar dados da API. Verifique a cidade digitada.");
+    }
+  }
+
+  function handleData(data) {
+    console.log("Dados do Clima:", data);
+
+    if (Number(data.cloud) <= 40) {
+      document.querySelector('#textCloud').textContent = `${data.cloud}% - Ideal para a placa solar`
+    } else if (Number(data.cloud) > 40 && Number(data.cloud) <= 70) {
+      document.querySelector('#textCloud').textContent = `${data.cloud}% - Razoável para a placa solar`
+    } else {
+      document.querySelector('#textCloud').textContent = `${data.cloud}% - Ruim para a placa solar`
+    }
+
+    if (data.climate === 'Clear') {
+      document.querySelector('#textWeather').textContent = `Céu limpo`
+    } else {
+      document.querySelector('#textWeather').textContent = `Céu não está limpo`
+
+    }
+  }
+
+  function handleError(error) {
+    console.error("Erro:", error.message);
+    // document.querySelector("#result").innerHTML = `
+    //   <p style="color: red;">${error.message}</p>
+    // `;
+  }
+
+  function run() {
+    const apiKey = "e751f9a145c71d84d72fe26d64f76e35";
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pt_br&appid=${apiKey}`;
+
+    fetch(url)
+      .then(handleResponse)
+      .then(handleData)
+      .catch(handleError);
+  }
+
+  run();
+});
+
+class Weather {
+  constructor (cloud, climate){
+    this.cloud = cloud,
+    this.climate = climate
+  }
+}

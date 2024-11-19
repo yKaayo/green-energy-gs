@@ -198,6 +198,174 @@
           <div
             class="w-full flex-shrink-0 flex flex-col md:flex-row justify-between px-10 gap-10 md:gap-5"
           >
+            <div
+              class="right w-full flex flex-col justify-center h-full mb-14 md:mb-0"
+            >
+              <div class="bg-[#ffea72] rounded-lg p-5 z-[2]">
+                <div class="w-full flex justify-center gap-3 mb-5">
+                  <h3 class="text-2xl font-semibold">Energia Solar</h3>
+                </div>
+                <div class="flex justify-between gap-3">
+                  <div class="flex flex-col items-center">
+                    <label class="text-lg">Qual a sua cidade:</label>
+                    <div class="flex items-center gap-2">
+                      <input
+                        class="rounded-lg py-2 px-3"
+                        type="text"
+                        id="city"
+                        placeholder="São Paulo"
+                      />
+                      <button id="weatherApiBtn" class="btn-outline-black rounded-s-none">Pesquisar</button>
+                    </div>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <p class="text-lg">Cobertura de Nuvem</p>
+                    <p id="textCloud" class="text-balance text-center">---</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <p class="text-lg">Clima</p>
+                    <p id="textWeather" class="text-balance text-center">---</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="growCard bg-[#ffe15a] rounded-lg px-5 relative z-[1] bottom-3 py-8 flex items-start duration-500"
+              >
+                <div class="card flex flex-col gap-2 w-full">
+                  <div class="w-full flex justify-between items-center">
+                    <h3 class="font-semibold">Benefícios</h3>
+                    <button class="btn-outline-black chevronToX">
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                  <p
+                    class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 benefit-text"
+                  >
+                    Ajuda a reduzir o aquecimento global, assim diminuindo o
+                    calor. Além disso, cria empregos em áreas como instalação,
+                    manutenção e fabricação de painéis solares. Outra vantagem é
+                    a maior independência energética, pois diminui a necessidade
+                    de usar combustíveis não renováveis, oferecendo uma solução
+                    limpa e renovável.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="growCard bg-yellow rounded-lg px-5 h-auto relative z-[1] bottom-6 py-5 flex items-start duration-500"
+              >
+                <div class="card flex flex-col gap-2 w-full">
+                  <div class="w-full flex justify-between items-center">
+                    <h3 class="font-semibold">Desafios</h3>
+                    <button class="btn-outline-black chevronToX">
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                  <p
+                    class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 benefit-text"
+                  >
+                    A transição para fontes de energia limpa enfrenta alguns
+                    desafios. Um dos principais motivos é o alto preço para ter
+                    energia limpa. Além disso, há a falta de infraestrutura para
+                    usar essas fontes de forma eficiente. Outro ponto importante
+                    é a falta de leis, incentivos e programas que ajudem a
+                    apoiar essa mudança.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div
+            class="w-full flex-shrink-0 flex flex-col md:flex-row justify-between px-10 gap-10 md:gap-5"
+          >
+            <!-- Left -->
+            <div
+              class="left md:w-[40%] flex flex-col justify-center h-full text-center md:text-start"
+            >
+              <h2 class="text-3xl text-balance mb-3 font-semibold">
+                Energia Eólica
+              </h2>
+              <p class="text-balance">
+                A energia eólica é sustentável, limpa e infinita, reduzindo
+                emissões e preservando o planeta. Além disso, gera empregos e
+                promove independência energética para comunidades.
+              </p>
+            </div>
+            <!-- Right -->
+            <div
+              class="right md:w-[55%] flex flex-col justify-center h-full mb-14 md:mb-0"
+            >
+              <div class="bg-[#90CF8E] rounded-lg p-5 z-[2]">
+                <div class="w-full flex justify-center gap-3 mb-5">
+                  <h3 class="text-2xl font-semibold">Lorem, ipsum dolor.</h3>
+                </div>
+                <div class="flex justify-between gap-3">
+                  <div class="flex flex-col items-center">
+                    <p class="text-lg">Lorem, ipsum.</p>
+                    <p>Lorem.</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <p class="text-lg">Lorem, ipsum.</p>
+                    <p>Lorem.</p>
+                  </div>
+                  <div class="flex flex-col items-center">
+                    <p class="text-lg">Lorem, ipsum.</p>
+                    <p>Lorem.</p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="growCard bg-[#B3CF99] rounded-lg px-5 relative z-[1] bottom-3 py-8 flex items-start duration-500"
+              >
+                <div class="card flex flex-col gap-2 w-full">
+                  <div class="w-full flex justify-between items-center">
+                    <h3 class="font-semibold">Benefícios</h3>
+                    <button class="btn-outline-black chevronToX">
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                  <p
+                    class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 benefit-text"
+                  >
+                    Ajuda a reduzir o aquecimento global, assim diminuindo o
+                    calor. Além disso, cria empregos em áreas como instalação,
+                    manutenção e fabricação de painéis solares. Outra vantagem é
+                    a maior independência energética, pois diminui a necessidade
+                    de usar combustíveis não renováveis, oferecendo uma solução
+                    limpa e renovável.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="growCard bg-[#9FB873] rounded-lg px-5 h-auto relative z-[1] bottom-6 py-5 flex items-start duration-500"
+              >
+                <div class="card flex flex-col gap-2 w-full">
+                  <div class="w-full flex justify-between items-center">
+                    <h3 class="font-semibold">Desafios</h3>
+                    <button class="btn-outline-black chevronToX">
+                      <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                  </div>
+                  <p
+                    class="transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 benefit-text"
+                  >
+                    A transição para fontes de energia limpa enfrenta alguns
+                    desafios. Um dos principais motivos é o alto preço para ter
+                    energia limpa. Além disso, há a falta de infraestrutura para
+                    usar essas fontes de forma eficiente. Outro ponto importante
+                    é a falta de leis, incentivos e programas que ajudem a
+                    apoiar essa mudança.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div
+            class="w-full flex-shrink-0 flex flex-col md:flex-row justify-between px-10 gap-10 md:gap-5"
+          >
             <!-- Left -->
             <div
               class="left md:w-[40%] flex flex-col justify-center h-full text-center md:text-start"
@@ -294,7 +462,7 @@
         </button>
         <button
           onclick="nextSlide()"
-          class="absolute right-10 md:right-auto md:left-[37%] bottom-5 transform -translate-y-1/2 bg-yellow rounded-full p-2 shadow-md"
+          class="absolute right-10 bottom-5 transform -translate-y-1/2 bg-yellow rounded-full p-2 shadow-md"
         >
           <i class="fa-solid fa-chevron-right"></i>
         </button>

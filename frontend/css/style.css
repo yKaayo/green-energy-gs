@@ -11,7 +11,8 @@
 @keyframes textAnim {
   0% {
     stroke-dashoffset: 155;
-  } 100% {
+  }
+  100% {
     stroke-dashoffset: 0;
   }
 }
@@ -139,9 +140,8 @@
 }
 
 .btn-yellow {
-  @apply bg-yellow px-3 py-1 rounded-lg text-lg font-semibold border-2 border-yellow duration-500 hover:bg-transparent;
+  @apply bg-yellow px-3 py-1 rounded-lg text-lg font-semibold border-2 border-yellow duration-500 hover:bg-transparent text-white hover:text-yellow;
 }
-
 .btn-outline-yellow {
   @apply bg-transparent px-3 py-1 rounded-lg text-lg font-semibold border-2 border-yellow duration-500 hover:bg-yellow;
 }
