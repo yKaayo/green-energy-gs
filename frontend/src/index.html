@@ -198,10 +198,10 @@
           Energias Renováveis
         </h2>
         <!-- Carrossel Container -->
-        <div class="flex transition-transform duration-500" id="carousel">
+        <div class="flex h-full transition-transform duration-500" id="carousel">
           <!-- Slide 1 -->
           <div
-            class="w-full flex-shrink-0 flex flex-col md:flex-row justify-between px-5 sm:px-10 gap-10 md:gap-5"
+            class="w-full h-full flex-shrink-0 flex flex-col md:flex-row justify-between px-5 sm:px-10 gap-10 md:gap-5"
           >
             <div class="right w-full flex flex-col justify-center md:mb-0">
               <div class="bg-[#ffea72] rounded-lg p-5 z-[2]">
@@ -467,20 +467,116 @@
         </div>
       </section>
 
-      <section id="inovation">
-        <div class="flex col justify-center">
+      <section id="inovation" class="mx-5 pt-20 md:mx-10">
+        <div class="flex flex-col justify-center gap-5 md:gap-10 container mx-auto">
+          <!-- Card 1 -->
           <div
-            class="flex items-center gap-5 border-2 h-[300px] border-yellow p-5 mx-5 rounded-lg relative"
+            class="flex flex-col justify-center items-center gap-5 w-full border-2 min-h-[360px] border-yellow p-5 md:pe-0 rounded-lg relative"
           >
             <img
               src="./assets/img/parque-eolico.jpg"
-              class="absolute w-full h-full object-cover brightness-50 left-0 z-[-1] bottom-0"
+              class="absolute w-full h-full object-cover brightness-50 bg-bottom left-0 z-[-1] top-0"
               alt="Parque Eólico"
             />
-            <article class="flex justify-between h-full w-full slider">
-              <model-viewer src="./assets/3d/wind_turbine/scene.gltf" camera-controls class="h-full cursor-grab"></model-viewer>
-              <div class="flex flex-col justify-center gap-3 text-white">
-                <h3 class="text-2xl font-semibold">
+            <article
+              class="flex flex-col md:flex-row items-center justify-between md:gap-10 h-full w-full slider md:me-0"
+            >
+              <model-viewer
+                src="./assets/3d/wind_turbine/scene.gltf"
+                camera-controls
+                auto-rotate
+                touch-action="pan-y"
+                shadow-intensity="0"
+                shadow-softness="0"
+                rotation-per-second="30deg"
+                class="shadow3D min-h-48 md:w-2/5 cursor-grab h-full md:order-2"
+              ></model-viewer>
+              <div
+                class="flex flex-col justify-center h-full gap-3 text-center md:text-start md:order-1 text-white md:w-3/5"
+              >
+                <h3 class="text-2xl font-semibold text-yellow">
+                  As turbinas Eólicas Flutuantes
+                </h3>
+                <p class="text-balance">
+                  As turbinas eólicas flutuantes são uma inovação revolucionária
+                  na geração de energia renovável, especialmente no campo da
+                  energia eólica offshore. Diferente das turbinas tradicionais
+                  fixadas ao fundo do mar, as turbinas flutuantes são montadas
+                  em plataformas que ficam ancoradas no fundo por cabos,
+                  permitindo que sejam instaladas em águas mais profundas e com
+                  ventos mais fortes e consistentes
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="flex flex-col justify-center items-center gap-5 w-full border-2 min-h-[360px] border-yellow p-5 md:pe-0 rounded-lg relative"
+          >
+            <img
+              src="./assets/img/parque-eolico.jpg"
+              class="absolute w-full h-full object-cover brightness-50 bg-bottom left-0 z-[-1] top-0"
+              alt="Parque Eólico"
+            />
+            <article
+              class="flex flex-col md:flex-row items-center justify-between md:gap-10 h-full w-full slider md:me-0"
+            >
+              <model-viewer
+                src="./assets/3d/wind_turbine/scene.gltf"
+                camera-controls
+                auto-rotate
+                touch-action="pan-y"
+                shadow-intensity="0"
+                shadow-softness="0"
+                rotation-per-second="30deg"
+                class="shadow3D min-h-48 md:w-2/5 cursor-grab h-full md:order-2"
+              ></model-viewer>
+              <div
+                class="flex flex-col justify-center h-full gap-3 text-center md:text-start md:order-1 text-white md:w-3/5"
+              >
+                <h3 class="text-2xl font-semibold text-yellow">
+                  As turbinas Eólicas Flutuantes
+                </h3>
+                <p class="text-balance">
+                  As turbinas eólicas flutuantes são uma inovação revolucionária
+                  na geração de energia renovável, especialmente no campo da
+                  energia eólica offshore. Diferente das turbinas tradicionais
+                  fixadas ao fundo do mar, as turbinas flutuantes são montadas
+                  em plataformas que ficam ancoradas no fundo por cabos,
+                  permitindo que sejam instaladas em águas mais profundas e com
+                  ventos mais fortes e consistentes
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="flex flex-col justify-center items-center gap-5 w-full border-2 min-h-[360px] border-yellow p-5 md:pe-0 rounded-lg relative"
+          >
+            <img
+              src="./assets/img/parque-eolico.jpg"
+              class="absolute w-full h-full object-cover brightness-50 bg-bottom left-0 z-[-1] top-0"
+              alt="Parque Eólico"
+            />
+            <article
+              class="flex flex-col md:flex-row items-center justify-between md:gap-10 h-full w-full slider md:me-0"
+            >
+              <model-viewer
+                src="./assets/3d/wind_turbine/scene.gltf"
+                camera-controls
+                auto-rotate
+                touch-action="pan-y"
+                shadow-intensity="0"
+                shadow-softness="0"
+                rotation-per-second="30deg"
+                class="shadow3D min-h-48 md:w-2/5 cursor-grab h-full md:order-2"
+              ></model-viewer>
+              <div
+                class="flex flex-col justify-center h-full gap-3 text-center md:text-start md:order-1 text-white md:w-3/5"
+              >
+                <h3 class="text-2xl font-semibold text-yellow">
                   As turbinas Eólicas Flutuantes
                 </h3>
                 <p class="text-balance">

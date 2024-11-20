@@ -381,3 +381,22 @@ class Weather {
     this.amountRain = amountRain;
   }
 }
+
+// 3D Shadow
+(() => {
+  const modelViewer = document.querySelector('.shadow3D');
+  const time = performance.now();
+
+  const oscillate = (min, max, period, time) => {
+    const middle = min + (max - min) / 2;
+    const amplitude = (max - min) / 2;
+    return middle + amplitude * Math.sin((time * 2 * Math.PI) / period);
+  };
+
+  const animate = (now) => {
+    modelViewer.shadowIntensity = oscillate(0, 2, 4000, now - time);
+    requestAnimationFrame(animate);
+  };
+
+  animate();
+})();
