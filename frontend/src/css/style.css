@@ -757,12 +757,12 @@ video {
   height: auto;
 }
 
-.h-full {
-  height: 100%;
-}
-
 .h-dvh {
   height: 100dvh;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .max-h-0 {
