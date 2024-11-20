@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -66,7 +66,7 @@
 
                 <ul
                   id="nav-links"
-                  class="hidden md:flex md:items-center md:gap-5 absolute md:relative top-14 md:top-0 left-0 right-0 bg-yellow md:bg-transparent p-4 md:p-0 shadow-md md:shadow-none"
+                  class="hidden md:flex md:items-center gap-20 md:gap-5 absolute md:relative top-14 md:top-0 left-0 right-0 bg-yellow md:bg-transparent p-4 md:p-0 shadow-md md:shadow-none"
                 >
                   <li>
                     <a href="#inicio" class="nav-link">Início</a>
@@ -75,7 +75,7 @@
                     <a href="#energy" class="nav-link">Energias Renováveis</a>
                   </li>
                   <li>
-                    <a href="#" class="nav-link">Inovações</a>
+                    <a href="#inovation" class="nav-link">Inovações</a>
                   </li>
                   <li>
                     <a href="#" class="nav-link">Teste</a>
@@ -86,9 +86,9 @@
           </div>
         </header>
 
-        <div class="h-[min(calc(100svh_-_60px))] mt-5 mx-5 sm:mx-10">
+        <div class="h-[min(calc(100svh_-_60px))] mt-5 mx-5 sm:mx-10 pb-5">
           <div
-            class="min-h-[95%] md:h-[95%] w-full p-5 rounded-3xl flex items-center container mx-auto relative overflow-hidden"
+            class="min-h-[calc(100%_-_20px)] md:h-[calc(100%_-_20px)] w-full p-5 rounded-3xl flex items-center container mx-auto relative overflow-hidden"
           >
             <div class="absolute inset-0 container mx-auto">
               <video
@@ -192,7 +192,7 @@
 
       <section
         id="energy"
-        class="top-16 sm:top-0 flex flex-col justify-center-center relative min-h-[calc(100svh_-_60px)] overflow-hidden rounded-lg pt-[80px] container mx-auto"
+        class="top-16 sm:top-0 flex flex-col justify-center relative min-h-[calc(100svh_-_60px)] overflow-hidden rounded-lg pt-[80px] container mx-auto"
       >
         <h2 class="text-center text-2xl font-semibold mb-10">
           Energias Renováveis
@@ -206,7 +206,7 @@
             <div class="right w-full flex flex-col justify-center md:mb-0">
               <div class="bg-[#ffea72] rounded-lg p-5 z-[2]">
                 <div class="w-full flex justify-center gap-3 mb-8">
-                  <h3 class="text-2xl font-semibold">Energia Solar</h3>
+                  <h3 class="text-2xl font-semibold autoshow">Energia Solar</h3>
                 </div>
                 <div class="flex flex-col md:flex-row justify-between gap-5">
                   <div class="flex flex-col items-center">
@@ -454,16 +454,50 @@
         <div class="flex justify-between mx-5 sm:mx-10 mt-5">
           <button
             onclick="prevSlide()"
-            class="transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg"
+            class="transform -translate-y-1/2 border-2 border-black bg-white rounded-full p-2 shadow-lg"
           >
             <i class="fa-solid fa-chevron-left"></i>
           </button>
           <button
             onclick="nextSlide()"
-            class="transform -translate-y-1/2 bg-white rounded-full p-2 shadow-lg"
+            class="transform -translate-y-1/2 border-2 border-black bg-white rounded-full p-2 shadow-lg"
           >
             <i class="fa-solid fa-chevron-right"></i>
           </button>
+        </div>
+      </section>
+
+      <section id="inovation">
+        <div class="flex col justify-center">
+          <div
+            class="flex items-center gap-5 border-2 h-[300px] border-yellow p-5 mx-5 rounded-lg relative"
+          >
+            <img
+              src="./assets/img/parque-eolico.jpg"
+              class="absolute w-full h-full object-cover brightness-50 left-0 z-[-1] bottom-0"
+              alt="Parque Eólico"
+            />
+            <article class="flex justify-between h-full w-full slider">
+              <div
+                id="windTurbine"
+                class="h-dvh object-cover cursor-grab"
+              ></div>
+              <div class="flex flex-col justify-center gap-3 text-white">
+                <h3 class="text-2xl font-semibold">
+                  As turbinas Eólicas Flutuantes
+                </h3>
+                <p class="text-balance">
+                  As turbinas eólicas flutuantes são uma inovação revolucionária
+                  na geração de energia renovável, especialmente no campo da
+                  energia eólica offshore. Diferente das turbinas tradicionais
+                  fixadas ao fundo do mar, as turbinas flutuantes são montadas
+                  em plataformas que ficam ancoradas no fundo por cabos,
+                  permitindo que sejam instaladas em águas mais profundas e com
+                  ventos mais fortes e consistentes
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -629,4 +663,5 @@
 
   <!-- Javascript -->
   <script src="./js/script.js"></script>
+  <script type="module" src="./js/3d.js"></script>
 </html>

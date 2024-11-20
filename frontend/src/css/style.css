@@ -640,6 +640,10 @@ video {
   z-index: 10;
 }
 
+.z-\[-1\] {
+  z-index: -1;
+}
+
 .z-\[1\] {
   z-index: 1;
 }
@@ -733,6 +737,10 @@ video {
   height: 2rem;
 }
 
+.h-\[300px\] {
+  height: 300px;
+}
+
 .h-\[44px\] {
   height: 44px;
 }
@@ -753,6 +761,10 @@ video {
   height: 100%;
 }
 
+.h-dvh {
+  height: 100dvh;
+}
+
 .max-h-0 {
   max-height: 0px;
 }
@@ -761,8 +773,8 @@ video {
   max-height: 24rem;
 }
 
-.min-h-\[95\%\] {
-  min-height: 95%;
+.min-h-\[calc\(100\%_-_20px\)\] {
+  min-height: calc(100% - 20px);
 }
 
 .min-h-\[calc\(100svh_-_60px\)\] {
@@ -797,6 +809,10 @@ video {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor-grab {
+  cursor: grab;
 }
 
 .flex-col {
@@ -835,6 +851,10 @@ video {
   gap: 0.5rem;
 }
 
+.gap-20 {
+  gap: 5rem;
+}
+
 .gap-3 {
   gap: 0.75rem;
 }
@@ -857,6 +877,10 @@ video {
 
 .overflow-x-hidden {
   overflow-x: hidden;
+}
+
+.scroll-smooth {
+  scroll-behavior: smooth;
 }
 
 .text-balance {
@@ -882,6 +906,11 @@ video {
 
 .border-2 {
   border-width: 2px;
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .border-yellow {
@@ -1017,6 +1046,10 @@ video {
   padding-bottom: 2rem;
 }
 
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
 .pt-\[60px\] {
   padding-top: 60px;
 }
@@ -1093,6 +1126,11 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.brightness-50 {
+  --tw-brightness: brightness(.5);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1113,13 +1151,15 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Logo - Icon */
+
 #logo-icon path {
   stroke-dasharray: 155;
   stroke-dashoffset: 155;
-  animation: textAnim 3s ease-in-out forwards;
+  animation: textAnimIcon 3s ease-in-out forwards;
 }
 
-@keyframes textAnim {
+@keyframes textAnimIcon {
   0% {
     stroke-dashoffset: 155;
   }
@@ -1129,10 +1169,18 @@ video {
   }
 }
 
+/* Logo - Name */
+
 #logo-name path {
   stroke-dasharray: 50;
   stroke-dashoffset: 50;
   animation: textAnimName 3s ease-in-out forwards;
+}
+
+/* Nav Links */
+
+.active::after {
+  width: 60%;
 }
 
 @keyframes textAnimName {
@@ -1150,6 +1198,8 @@ video {
     stroke-dashoffset: 0;
   }
 }
+
+/* Test Form */
 
 .radio-input {
   display: flex;
@@ -1254,6 +1304,8 @@ video {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 }
+
+/* Variables */
 
 .modal-question {
   border-radius: 0.5rem;
@@ -1410,14 +1462,6 @@ video {
   }
 }
 
-.active::after {
-  width: 60%;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 .hover\:scale-125:hover {
   --tw-scale-x: 1.25;
   --tw-scale-y: 1.25;
@@ -1502,8 +1546,8 @@ html {
     display: none;
   }
 
-  .md\:h-\[95\%\] {
-    height: 95%;
+  .md\:h-\[calc\(100\%_-_20px\)\] {
+    height: calc(100% - 20px);
   }
 
   .md\:h-auto {
