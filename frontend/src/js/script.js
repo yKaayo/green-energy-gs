@@ -81,6 +81,9 @@ new Chart(ctx, {
   },
 });
 
+// Inicialize AOS
+AOS.init();
+
 // Form
 let i = 0;
 
@@ -151,9 +154,9 @@ document.querySelector("#formAnswer").addEventListener("submit", (e) => {
 
         document.querySelector(
           "#resultSubtitle"
-        ).textContent = `Com base nas suas respostas, você gera aproximadamente ${Number(
+        ).innerHTML = `Com base nas suas respostas, você gera aproximadamente <span class="font-semibold">${Number(
           data.media_emissoes
-        ).toFixed(2)} kg de carbono por dia`;
+        ).toFixed(2)}Kg</span> de carbono por dia`;
 
         if (data.rating === "Desperdiçador") {
           document.querySelector("#resultContent").innerHTML = `<p></p>`;
@@ -351,7 +354,9 @@ document.querySelector("#weatherApiBtn").addEventListener("click", () => {
         "Sem chuva, talvez a hidrelétrica seja afetada";
     }
 
-    document.querySelector('#textAmountRain').textContent = `${data.amountRain}mm`
+    document.querySelector(
+      "#textAmountRain"
+    ).textContent = `${data.amountRain}mm`;
   }
 
   function handleError(error) {
@@ -384,7 +389,7 @@ class Weather {
 
 // 3D Shadow
 (() => {
-  const modelViewer = document.querySelector('.shadow3D');
+  const modelViewer = document.querySelector(".shadow3D");
   const time = performance.now();
 
   const oscillate = (min, max, period, time) => {

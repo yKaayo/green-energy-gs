@@ -24,6 +24,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
 
+    <!-- AOS - CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
@@ -88,7 +91,7 @@
 
         <div class="h-[min(calc(100svh_-_60px))] mt-5 mx-5 sm:mx-10 pb-5">
           <div
-            class="min-h-[calc(100%_-_20px)] md:h-[calc(100%_-_20px)] w-full p-5 rounded-3xl flex items-center container mx-auto relative overflow-hidden"
+            class="min-h-[calc(100%_-_20px)] md:h-[calc(100%_-_20px)] w-full p-5 rounded-3xl flex items-center container mx-auto relative overflow-hidden border-2 border-yellow"
           >
             <div class="absolute inset-0 container mx-auto">
               <video
@@ -201,6 +204,8 @@
         <div
           class="flex h-full transition-transform duration-500"
           id="carousel"
+          data-aos="fade-up"
+          data-aos-duration="1000"
         >
           <!-- Slide 1 -->
           <div
@@ -472,14 +477,16 @@
 
       <section id="inovation" class="mx-5 pt-20 md:mx-10">
         <div
-          class="flex flex-col justify-center gap-5 md:gap-10 container mx-auto"
+          class="flex flex-col items-center justify-center gap-5 md:gap-10 container mx-auto"
         >
-          <h2 class="text-2xl font-semibold mx-auto">
+          <h2 class="text-2xl font-semibold text-center">
             Tecnologias Inovadoras que Estão Transformando a Energia Renovável
           </h2>
           <!-- Card 1 -->
           <div
             class="flex flex-col justify-center items-center gap-5 w-full border-2 min-h-[360px] border-yellow p-5 md:pe-0 rounded-lg relative"
+            data-aos="fade-up"
+            data-aos-duration="1000"
           >
             <img
               src="./assets/img/parque-eolico.jpg"
@@ -521,6 +528,8 @@
           <!-- Card 2 -->
           <div
             class="flex flex-col justify-center items-center gap-5 w-full border-2 min-h-[360px] border-yellow p-5 md:pe-0 rounded-lg relative"
+            data-aos="fade-up"
+            data-aos-duration="1000"
           >
             <img
               src="./assets/img/carro-eletrico.webp"
@@ -528,7 +537,7 @@
               alt="Carro elétrico carregando"
             />
             <article
-              class="flex flex-col md:flex-row items-center md:items-stretch justify-between md:gap-10 h-full w-full md:me-0"
+              class="flex flex-col md:flex-row items-center justify-between md:gap-10 h-full w-full md:me-0"
             >
               <model-viewer
                 src="./assets/3d/tesla_cybertruck/scene.gltf"
@@ -560,6 +569,8 @@
           <!-- Card 3 -->
           <div
             class="flex flex-col justify-center items-center gap-5 w-full border-2 min-h-[360px] border-yellow p-5 md:pe-0 rounded-lg relative"
+            data-aos="fade-up"
+            data-aos-duration="1000"
           >
             <img
               src="./assets/img/sistemas-agrivoltaicos.webp"
@@ -595,15 +606,30 @@
               </div>
             </article>
           </div>
+
+          <div class="w-dvw bg-yellow py-10 px-5 md:px-10" data-aos="fade-up"
+          data-aos-duration="1000">
+            <h2 class="font-semibold text-2xl text-balance text-center mb-3">
+              Você faz parte dessa mudança!
+            </h2>
+            <p class="text-center text-balance text-xl">
+              Compartilhe nas suas
+              <span class="font-semibold">redes sociais</span> como você adota
+              <span class="font-semibold">energia renovável</span>
+              e inspire mais pessoas a fazerem o mesmo!
+            </p>
+          </div>
         </div>
       </section>
 
       <section
         id="carbonTest"
-        class="min-h-[calc(100svh_-_60px)] flex items-center justify-center mx-10"
+        class="min-h-[calc(100svh_-_60px)] flex items-center justify-center mx-5 md:mx-10"
       >
         <div
-          class="h-full flex flex-col items-center justify-center text-center gap-4"
+          class="h-full flex flex-col items-center justify-center text-center gap-4 shadow-2xl py-10 px-5 md:px-10 rounded-lg"
+          data-aos="fade-up"
+          data-aos-duration="1000"
         >
           <h3 id="resultTitle" class="text-2xl font-semibold text-balance mx-5">
             Participe do nosso teste de pegada de carbono e conheça o seu perfil
@@ -672,6 +698,9 @@
               </form>
             </div>
           </dialog>
+          <ul id="listResult">
+            
+          </ul>
         </div>
       </section>
     </main>
@@ -744,17 +773,17 @@
           </div>
         </div>
         <div class="flex items-center gap-5 my-5">
-          <a href="" class="hover:scale-125 duration-500"
+          <a href="#" class="hover:scale-125 duration-500"
             ><i
               class="bi bi-instagram text-white text-xl duration-500 hover:text-pink-500"
             ></i
           ></a>
-          <a href="" class="hover:scale-125 duration-500"
+          <a href="#" class="hover:scale-125 duration-500"
             ><i
               class="bi bi-tiktok text-white text-xl duration-500 hover:text-black"
             ></i
           ></a>
-          <a href="" class="hover:scale-125 duration-500"
+          <a href="#" class="hover:scale-125 duration-500"
             ><i
               class="bi bi-youtube text-white text-xl duration-500 hover:text-red-600"
             ></i
@@ -766,6 +795,9 @@
 
   <!-- Chart JS -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- AOS - JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <!-- Javascript -->
   <script src="./js/script.js"></script>
