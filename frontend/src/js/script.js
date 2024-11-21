@@ -129,7 +129,6 @@ document.querySelector("#formAnswer").addEventListener("submit", (e) => {
   document.querySelectorAll('input[name="answer"]').forEach((input) => {
     input.checked = false;
   });
-  console.log(values);
 
   if (values.length === 6) {
     fetch("https://kaayo.pythonanywhere.com/calcular", {
@@ -165,6 +164,22 @@ document.querySelector("#formAnswer").addEventListener("submit", (e) => {
         } else if (data.rating === "Sustentável") {
           document.querySelector("#resultContent").innerHTML = `<p></p>`;
         }
+
+        document.querySelector('#textTips').textContent = `Algumas dicas para você!`
+
+        document.querySelector('#listResult').innerHTML = `
+        <li class="text-balance">Verifique se seus eletrônicos possuem modo de espera de baixo consumo e utilize extensões com interruptor para desligar vários aparelhos de uma vez.</li>
+        <div class="w-full h-1 my-2 bg-yellow rounded-lg"></div>
+        <li class="text-balance">Planeje suas rotas para o uso transporte coletivos e incentive seus amigos e familiares a fazerem o mesmo</li>
+        <div class="w-full h-1 my-2 bg-yellow rounded-lg"></div>
+        <li class="text-balance">Aumente o consumo de legumes e frutas</li>
+        <div class="w-full h-1 my-2 bg-yellow rounded-lg"></div>
+        <li class="text-balance">Se utilizar o gás, procure ajustar a chama para o tamanho adequado da panela e desligar o fogo alguns minutos antes do término do cozimento</li>
+        <div class="w-full h-1 my-2 bg-yellow rounded-lg"></div>
+        <li class="text-balance">Separe corretamente os materiais recicláveis (papel, plástico, vidro, metal) e procure pontos de coleta próximos à sua casa</li>
+        <div class="w-full h-1 my-2 bg-yellow rounded-lg"></div>
+        <li class="text-balance">Leve suas próprias sacolas para as compras e evite produtos descartáveis</li>
+        `
       })
       .catch((error) => {
         console.error(`Erro: ${error}`);

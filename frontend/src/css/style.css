@@ -786,10 +786,6 @@ video {
   min-height: calc(100svh - 60px);
 }
 
-.min-h-full {
-  min-height: 100%;
-}
-
 .w-4\/5 {
   width: 80%;
 }
@@ -826,6 +822,10 @@ video {
 
 .cursor-grab {
   cursor: grab;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .flex-col {
