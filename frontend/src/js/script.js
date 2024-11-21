@@ -165,21 +165,29 @@ document.querySelector("#formAnswer").addEventListener("submit", (e) => {
           document.querySelector("#resultContent").innerHTML = `<p></p>`;
         }
 
-        document.querySelector('#textTips').textContent = `Algumas dicas para você!`
+        document.querySelector(
+          "#textTips"
+        ).textContent = `Algumas dicas para você!`;
 
-        document.querySelector('#listResult').innerHTML = `
-        <li class="text-balance">Verifique se seus eletrônicos possuem modo de espera de baixo consumo e utilize extensões com interruptor para desligar vários aparelhos de uma vez.</li>
-        <div class="w-full h-1 my-2 bg-yellow rounded-lg"></div>
-        <li class="text-balance">Planeje suas rotas para o uso transporte coletivos e incentive seus amigos e familiares a fazerem o mesmo</li>
-        <div class="w-full h-1 my-2 bg-yellow rounded-lg"></div>
-        <li class="text-balance">Aumente o consumo de legumes e frutas</li>
-        <div class="w-full h-1 my-2 bg-yellow rounded-lg"></div>
-        <li class="text-balance">Se utilizar o gás, procure ajustar a chama para o tamanho adequado da panela e desligar o fogo alguns minutos antes do término do cozimento</li>
-        <div class="w-full h-1 my-2 bg-yellow rounded-lg"></div>
-        <li class="text-balance">Separe corretamente os materiais recicláveis (papel, plástico, vidro, metal) e procure pontos de coleta próximos à sua casa</li>
-        <div class="w-full h-1 my-2 bg-yellow rounded-lg"></div>
-        <li class="text-balance">Leve suas próprias sacolas para as compras e evite produtos descartáveis</li>
-        `
+        const tips = [
+          "Verifique se seus eletrônicos possuem modo de espera de baixo consumo e utilize extensões com interruptor para desligar vários aparelhos de uma vez.",
+          "Planeje suas rotas para o uso transporte coletivos e incentive seus amigos e familiares a fazerem o mesmo",
+          "Aumente o consumo de legumes e frutas",
+          "Se utilizar o gás, procure ajustar a chama para o tamanho adequado da panela e desligar o fogo alguns minutos antes do término do cozimento",
+          "Separe corretamente os materiais recicláveis (papel, plástico, vidro, metal) e procure pontos de coleta próximos à sua casa",
+          "Leve suas próprias sacolas para as compras e evite produtos descartáveis",
+        ];
+
+        const divider =
+          '<div class="w-full h-1 my-2 bg-yellow rounded-lg"></div>';
+
+        tips.forEach(
+          (tip) =>
+            (document.querySelector("#listResult").innerHTML += `
+              <li class="text-balance">${tip}</li>
+              ${divider}
+            `)
+        );
       })
       .catch((error) => {
         console.error(`Erro: ${error}`);
@@ -311,6 +319,16 @@ document.querySelector("#weatherApiBtn").addEventListener("click", () => {
       );
     }
   }
+  class Weather {
+    constructor(cloud, climate, windSpeed, maxWindSpeed, windDeg, amountRain) {
+      (this.cloud = cloud),
+        (this.climate = climate),
+        (this.windSpeed = windSpeed),
+        (this.maxWindSpeed = maxWindSpeed),
+        (this.windDeg = windDeg);
+      this.amountRain = amountRain;
+    }
+  }
 
   function handleData(data) {
     console.log("Dados do Clima:", data);
@@ -390,17 +408,6 @@ document.querySelector("#weatherApiBtn").addEventListener("click", () => {
 
   run();
 });
-
-class Weather {
-  constructor(cloud, climate, windSpeed, maxWindSpeed, windDeg, amountRain) {
-    (this.cloud = cloud),
-      (this.climate = climate),
-      (this.windSpeed = windSpeed),
-      (this.maxWindSpeed = maxWindSpeed),
-      (this.windDeg = windDeg);
-    this.amountRain = amountRain;
-  }
-}
 
 // 3D Shadow
 (() => {

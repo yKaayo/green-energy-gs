@@ -169,7 +169,7 @@
   after:absolute after:bottom-0 md:after:-bottom-1 after:left-0 
   after:w-0 after:h-0.5 after:bg-white 
   after:transition-[width] after:duration-300 after:ease-in-out
-  hover:after:w-3/5 py-1 md:py-0 drop-shadow-lg;
+  hover:after:w-3/5 py-1 md:py-0 drop-shadow-xl;
 }
 
 @keyframes fadeInDown {
