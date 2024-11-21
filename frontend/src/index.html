@@ -200,6 +200,28 @@
         <h2 class="text-center text-2xl font-semibold mb-10">
           Energias Renováveis
         </h2>
+
+        <!-- Search the City -->
+        <div class="flex flex-col items-center mb-5 mx-auto p-5 rounded-lg shadow-lg">
+          <label class="text-lg text-center"
+            >Pesquise o clima da sua cidade:
+          </label>
+          <div class="flex flex-col sm:flex-row items-center gap-2">
+            <input
+              class="rounded-lg py-2 px-3 border-2 border-black"
+              type="text"
+              id="city"
+              placeholder="São Paulo"
+            />
+            <button
+              id="weatherApiBtn"
+              class="btn-outline-black rounded-s-none mt-5 sm:mt-0"
+            >
+              Pesquisar
+            </button>
+          </div>
+        </div>
+
         <!-- Carrossel Container -->
         <div
           class="flex h-full transition-transform duration-500"
@@ -217,25 +239,6 @@
                   <h3 class="text-2xl font-semibold autoshow">Energia Solar</h3>
                 </div>
                 <div class="flex flex-col md:flex-row justify-between gap-5">
-                  <div class="flex flex-col items-center">
-                    <label class="text-lg text-center"
-                      >Pesquise o clima da sua cidade:
-                    </label>
-                    <div class="flex flex-col sm:flex-row items-center gap-2">
-                      <input
-                        class="rounded-lg py-2 px-3"
-                        type="text"
-                        id="city"
-                        placeholder="São Paulo"
-                      />
-                      <button
-                        id="weatherApiBtn"
-                        class="btn-outline-black rounded-s-none mt-5 sm:mt-0"
-                      >
-                        Pesquisar
-                      </button>
-                    </div>
-                  </div>
                   <div class="flex flex-col items-center">
                     <p class="text-lg font-semibold text-center">
                       Cobertura de Nuvem
@@ -607,8 +610,11 @@
             </article>
           </div>
 
-          <div class="w-dvw bg-yellow py-10 px-5 md:px-10" data-aos="fade-up"
-          data-aos-duration="1000">
+          <div
+            class="w-dvw bg-yellow py-10 px-5 md:px-10"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             <h2 class="font-semibold text-2xl text-balance text-center mb-3">
               Você faz parte dessa mudança!
             </h2>
@@ -699,9 +705,7 @@
             </div>
           </dialog>
           <h3 id="textTips" class="text-xl font-semibold text-balance"></h3>
-          <ul id="listResult" class="grid grid-cols-1 justify-start gap-5">
-            
-          </ul>
+          <ul id="listResult" class="grid grid-cols-1 justify-start gap-5"></ul>
         </div>
       </section>
     </main>
