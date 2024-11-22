@@ -239,9 +239,7 @@ document.querySelectorAll(".chevronToX").forEach((button) => {
 });
 
 // Open Weather
-document.querySelector("#weatherApiBtn").addEventListener("click", () => {
-  apiWeather();
-});
+document.querySelector("#weatherApiBtn").addEventListener("click", apiWeather);
 
 // Contact Form
 document.querySelector("#contactForm").addEventListener("submit", (e) => {
