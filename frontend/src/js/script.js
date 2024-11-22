@@ -213,18 +213,18 @@ document.querySelectorAll(".chevronToX").forEach((button) => {
 
         const outroIcon = card.querySelector("i");
         outroIcon.classList.remove("rotate-180");
-        outroIcon.classList.remove("fa-xmark");
-        outroIcon.classList.add("fa-chevron-down");
+        outroIcon.classList.remove("bi-x");
+        outroIcon.classList.add("bi-chevron-down");
       }
     });
 
     const icon = button.querySelector("i");
-    if (icon.classList.contains("fa-chevron-down")) {
-      icon.classList.remove("fa-chevron-down");
-      icon.classList.add("fa-xmark", "rotate-180");
+    if (icon.classList.contains("bi-chevron-down")) {
+      icon.classList.remove("bi-chevron-down");
+      icon.classList.add("bi-x", "rotate-180");
     } else {
-      icon.classList.remove("fa-xmark", "rotate-180");
-      icon.classList.add("fa-chevron-down");
+      icon.classList.remove("bi-x", "rotate-180");
+      icon.classList.add("bi-chevron-down");
     }
 
     const textCard = button.closest(".flex-col").querySelector(".benefit-text");
