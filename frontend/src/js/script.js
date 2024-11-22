@@ -110,14 +110,6 @@ menuButton.addEventListener("click", () => {
 // Form
 let i = 0;
 
-const titles = [
-  "Você desliga aparelhos e luzes quando não está usando?",
-  "Você usa transporte público ou bicicleta com frequência?",
-  "Você costuma comer carne todos os dias?",
-  "Você utiliza sempre o gás de cozinha para preparar suas refeições?",
-  "Você normalmente recicla seu lixo?",
-  "Você consome muitos produtos embalados ou descartáveis?",
-];
 
 const values = [];
 
@@ -125,7 +117,7 @@ const btnBack = document.querySelector("#modalBack");
 btnBack.addEventListener("click", () => {
   if (i > 0) {
     i -= 1;
-    document.querySelector("#modalTitle").textContent = titles[i];
+    document.querySelector("#modalTitle").textContent = titles[i].title;
     values.pop();
   } else {
     document.querySelector("#modal").close();
@@ -142,7 +134,7 @@ document.querySelector("#formAnswer").addEventListener("submit", (e) => {
 
   i += 1;
   if (i < titles.length) {
-    document.querySelector("#modalTitle").textContent = titles[i];
+    document.querySelector("#modalTitle").textContent = titles[i].title;
   } else {
     document.querySelector("#modal").close();
   }
